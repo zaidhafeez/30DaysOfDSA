@@ -11,6 +11,14 @@ The goal is to spend dedicated time each day, unraveling various aspects of Data
 Please feel free to connect and share your insights on Twitter; you can find me on [![Twitter](https://img.shields.io/twitter/follow/mohd_981?style=style=social)](https://twitter.com/mohd_981).
 
 ## Progress
-
-- **Day 1: Introduction**
-  - Will update soon.
+- Week 1: Arrays
+  - **Day 1**
+    - Reverse the Array.
+    - Find the maximum and minimum element in an array.
+  - **Day 2**
+    - Bubble Sort.
+    - Find the "Kth" max and min element of an array.
+  - **Day 3**
+    - Selection Sort.
+    - Insertion Sort.
+    - Given an array that consists of only 0, 1, and 2. Sort the array without using any sorting algo
