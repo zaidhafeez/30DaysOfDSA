@@ -22,3 +22,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
     - Selection Sort.
     - Insertion Sort.
     - Given an array that consists of only 0, 1, and 2. Sort the array without using any sorting algo
+  - **Day 4**
+  - **Day 5**
+  - **Day 6**
+  - **Day 7**
