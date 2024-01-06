@@ -25,6 +25,6 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 4**
     - Cycle Sort
   - **Day 5**
-    - Find Missing Numbers[https://leetcode.com/problems/missing-number/]
+    - [Find Missing Numbers](https://leetcode.com/problems/missing-number/)
   - **Day 6**
   - **Day 7**
