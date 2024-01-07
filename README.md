@@ -28,4 +28,5 @@ Please feel free to connect and share your insights on Twitter; you can find me 
     - [Find Missing Numbers](https://leetcode.com/problems/missing-number/)
   - **Day 6**
     - [Move all negative elements to end](https://www.geeksforgeeks.org/problems/move-all-negative-elements-to-end1813/1)
+    - [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
   - **Day 7**
