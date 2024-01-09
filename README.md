@@ -11,7 +11,7 @@ The goal is to spend dedicated time each day, unraveling various aspects of Data
 Please feel free to connect and share your insights on Twitter; you can find me on [![Twitter](https://img.shields.io/twitter/follow/mohd_981?style=style=social)](https://twitter.com/mohd_981).
 
 ## Progress
-- Week 1: Arrays
+- Week 1: Arrays [2 - 8 Jan]
   - **Day 1**
     - Reverse the Array.
     - Find the maximum and minimum element in an array.
@@ -31,3 +31,6 @@ Please feel free to connect and share your insights on Twitter; you can find me 
     - [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
   - **Day 7**
     - [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
+- Week 2: Arrays [9 - 15 Jan]
+  - **Day 1**
+    - [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/).
