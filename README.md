@@ -32,5 +32,5 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 7**
     - [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
 - Week 2: Arrays [9 - 15 Jan]
-  - **Day 1**
+  - **Day 8**
     - [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/).
