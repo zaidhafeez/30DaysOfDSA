@@ -36,3 +36,5 @@ Please feel free to connect and share your insights on Twitter; you can find me 
     - [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/).
     - [Set Mismatch](https://leetcode.com/problems/set-mismatch/)
     - [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+  - **Day 9**
+  - **Day 10**
