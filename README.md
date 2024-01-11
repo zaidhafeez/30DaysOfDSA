@@ -38,3 +38,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
     - [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
   - **Day 9**
   - **Day 10**
+  - **Day 11**
+  - **Day 12**
+  - **Day 13**
+  - **Day 14**
