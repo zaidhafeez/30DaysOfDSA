@@ -6,19 +6,6 @@ func doUnion(arr1: inout [Int], arr2: inout [Int]) {
     var j = 0
     var m = arr1.count
     var n = arr2.count
-    while (i < m && j < n) {
-        if arr1[i] < arr2[j] {
-            arr.append(arr1[i])
-            i += 1
-        } else if arr1[i] > arr2[j] {
-            arr.append(arr2[j])
-            j += 1
-        } else {
-            arr.append(arr[i])
-            i += 1
-            j += 1
-        }
-    }
     
     while (i < m) {
         arr.append(arr1[i])
@@ -29,10 +16,18 @@ func doUnion(arr1: inout [Int], arr2: inout [Int]) {
         arr.append(arr2[j])
         j += 1
     }
-    print(arr)
+    arr.sort()
+    var count = 1
+    for i in 1..<arr.count {
+        if arr[i] != arr[i - 1] {
+            count += 1
+        }
+    }
+    
+    print(count)
 }
 
-var arr1 = [1,2,2,1]
-var arr2 = [2,2]
+var arr1 = [85, 25, 1, 32, 54, 6 ]//[1,2,3,4,5]
+var arr2 = [85, 2]
 doUnion(arr1: &arr1, arr2: &arr2)
 
