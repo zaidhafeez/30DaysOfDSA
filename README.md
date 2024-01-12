@@ -41,7 +41,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 10**
     - [Rotate Array](https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1)
   - **Day 11**
-    - [Maximum SubArray](https://leetcode.com/problems/maximum-subarray/description/)
+    - [Maximum SubArray](https://leetcode.com/problems/maximum-subarray/description/) [Solution](https://www.enjoyalgorithms.com/blog/maximum-subarray-sum/)
   - **Day 12**
   - **Day 13**
   - **Day 14**
