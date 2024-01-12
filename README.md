@@ -39,6 +39,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 9**
     - [Union of two arrays](https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1)
   - **Day 10**
+    - [Rotate Array](https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1)
   - **Day 11**
   - **Day 12**
   - **Day 13**
