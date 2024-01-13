@@ -43,5 +43,6 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 11**
     - [Maximum SubArray](https://leetcode.com/problems/maximum-subarray/description/) [Solution](https://www.enjoyalgorithms.com/blog/maximum-subarray-sum/)
   - **Day 12**
+    - [Minimize the height](https://www.geeksforgeeks.org/problems/minimize-the-heights3351/1) [Solution](https://www.youtube.com/watch?v=tSLiZAQG9NM&ab_channel=GeeksforGeeksPractice)
   - **Day 13**
   - **Day 14**
