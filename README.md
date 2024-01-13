@@ -41,6 +41,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 10**
     - [Rotate Array](https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1)
   - **Day 11**
+    - [Kadane's Algorithm](https://www.youtube.com/watch?v=w4W6yya1PIc&ab_channel=CodeHelp-byBabbar)
     - [Maximum SubArray](https://leetcode.com/problems/maximum-subarray/description/) [Solution](https://www.enjoyalgorithms.com/blog/maximum-subarray-sum/)
   - **Day 12**
     - [Minimize the height](https://www.geeksforgeeks.org/problems/minimize-the-heights3351/1) [Solution](https://www.youtube.com/watch?v=tSLiZAQG9NM&ab_channel=GeeksforGeeksPractice)
