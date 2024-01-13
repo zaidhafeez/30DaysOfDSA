@@ -13,17 +13,17 @@ Please feel free to connect and share your insights on Twitter; you can find me 
 ## Progress
 - Week 1: Arrays [2 - 8 Jan]
   - **Day 1**
-    - Reverse the Array.
-    - Find the maximum and minimum element in an array.
+    - [Reverse the Array](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
+    - [Find the maximum and minimum element in an array](https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1)
   - **Day 2**
-    - Bubble Sort.
-    - Find the "Kth" max and min element of an array.
+    - [Bubble Sort](https://www.youtube.com/watch?v=F5MZyqRp_IM&t=1s&ab_channel=KunalKushwaha)
+    - [Find the "Kth" max and min element of an array](https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1)
   - **Day 3**
-    - Selection Sort.
-    - Insertion Sort.
-    - Given an array that consists of only 0, 1, and 2. Sort the array without using any sorting algo
+    - [Selection Sort](https://www.youtube.com/watch?v=Nd4SCCIHFWk&ab_channel=KunalKushwaha)
+    - [Insertion Sort](https://www.youtube.com/watch?v=By_5-RRqVeE&ab_channel=KunalKushwaha)
+    - [Given an array that consists of only 0, 1, and 2. Sort the array without using any sorting algo](https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1)
   - **Day 4**
-    - Cycle Sort
+    - [Cycle Sort](https://www.youtube.com/watch?v=JfinxytTYFQ&ab_channel=KunalKushwaha)
   - **Day 5**
     - [Find Missing Numbers](https://leetcode.com/problems/missing-number/)
   - **Day 6**
