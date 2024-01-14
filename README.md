@@ -46,4 +46,5 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 12**
     - [Minimize the height](https://www.geeksforgeeks.org/problems/minimize-the-heights3351/1) [Solution](https://www.youtube.com/watch?v=tSLiZAQG9NM&ab_channel=GeeksforGeeksPractice)
   - **Day 13**
+    - [Minimum number of jumps](https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1)
   - **Day 14**
