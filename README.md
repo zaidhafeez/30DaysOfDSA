@@ -11,7 +11,7 @@ The goal is to spend dedicated time each day, unraveling various aspects of Data
 Please feel free to connect and share your insights on Twitter; you can find me on [![Twitter](https://img.shields.io/twitter/follow/mohd_981?style=style=social)](https://twitter.com/mohd_981).
 
 ## Progress
-- Week 1: Arrays [2 - 8 Jan]
+- Week 1: Arrays [2 - 8 Jan]aws
   - **Day 1**
     - [Reverse the Array](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
     - [Find the maximum and minimum element in an array](https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1)
