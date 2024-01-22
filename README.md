@@ -48,7 +48,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 13**
     - [Minimum number of jumps](https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1)
   - **Day 14**
-- Week 3: Arrays [16 - 21Jan]
+- Week 3: Arrays [22 - 28Jan]
   - **Day 15**
   - **Day 16**
   - **Day 17**
