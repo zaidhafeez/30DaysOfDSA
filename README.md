@@ -8,7 +8,7 @@ The purpose of documenting this journey is to share insights with others and con
 
 The goal is to spend dedicated time each day, unraveling various aspects of Data Structures and Algorithms, ultimately gaining a strong understanding of key concepts.
 
-Please feel free to connect and share your insights on Twitter; you can find me on [![Twitter](https://img.shields.io/twitter/follow/mohd_981?style=style=social)](https://twitter.com/mohd_981).
+Please feel free to connect and share your insights on Twitter; you can find me on <a href="https://twitter.com/mohd_981" target="blank"><img align="center" src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="mohd_981" /></a>
 
 ## Progress
 - Week 1: Arrays [2 - 8 Jan]aws
