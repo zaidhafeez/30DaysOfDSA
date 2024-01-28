@@ -56,4 +56,4 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 19**
   - **Day 20**
   - **Day 21**
-- Week 4: Arrays [28 - 4Jan]
+- Week 4: Arrays [28 - 4 Jan]
