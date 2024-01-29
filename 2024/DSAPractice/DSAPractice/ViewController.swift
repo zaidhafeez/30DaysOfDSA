@@ -11,11 +11,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var arr = [3, 2, 1, 56, 10000, 167]
-        print(getMinMax(arr: &arr))
-        // Do any additional setup after loading the view.
+//        var arr = [3, 2, 1, 56, 10000, 167]
+//        var arr = [3, 1, 5, 4, 2]
+//        var arr = (1...10000).map { _ in
+//            return Int.random(in: 1...10000)
+//        }
+        var arr = [2, 3, 4, 9]
+//        getMinMax(arr: &arr)
+//        print("before sorting \(arr)")
+        var startTime = CACurrentMediaTime()
+        bubbleSort(arr: &arr)
+        print("Execution Done In Time: - \(CACurrentMediaTime() - startTime)")
+//        print("after sorting \(arr)")
     }
     
+
+//MARK: - Reverse Array
     func reverseArray(arr: inout [Int]) {
         var start = 0
         var end = arr.count - 1
@@ -39,7 +50,8 @@ class ViewController: UIViewController {
         self.view.addSubview(label)
         return label
     }
-    
+ 
+//MARK: - GET MIN AND MAX
     func getMinMax(arr: inout [Int]) -> (Int, Int) {
         var max = arr.first!
         var min = arr.first!
@@ -53,6 +65,22 @@ class ViewController: UIViewController {
         return (max, min)
     }
 
+//MARK: - Bubble Sort
+    
+    func bubbleSort(arr: inout [Int]) {
+        for i in arr.indices {
+            var isSwapping = false
+            for j in 1..<arr.count - i {
+                if arr[j] < arr[j - 1] {
+                    isSwapping = true
+                    swap(arr: &arr, first: j, second: j - 1)
+                }
+            }
+            if !isSwapping {
+                break
+            }
+        }
+    }
 
 }
 
