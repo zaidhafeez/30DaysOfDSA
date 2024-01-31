@@ -2,7 +2,7 @@
 
 *English Version*
 
-This repository is dedicated to documenting my 30-day journey of enhancing my foundational knowledge of Data Structures and Algorithms (DSA). I will embark on this journey starting on 2nd Jan to 1st Feb, dedicating a portion of my time each day for the next 30 days.
+This repository is dedicated to documenting my 30-day journey of enhancing my foundational knowledge of Data Structures and Algorithms (DSA). I will embark on this journey starting on Not Expected, dedicating a portion of my time each day for the next 30 days.
 
 The purpose of documenting this journey is to share insights with others and contribute to the improvement of available resources in the realm of DSA.
 
