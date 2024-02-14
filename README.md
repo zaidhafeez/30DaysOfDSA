@@ -14,7 +14,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
 - Week 1: Arrays [2 - 8 Jan]
   - **Day 1**
     - [Reverse the Array](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
-    - [Find the maximum and minimum element in an array](https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1)
+    - [Find the maximum and minimum element in an array](https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1) [Solution](https://www.enjoyalgorithms.com/blog/find-the-minimum-and-maximum-value-in-an-array)
   - **Day 2**
     - [Bubble Sort](https://www.youtube.com/watch?v=F5MZyqRp_IM&t=1s&ab_channel=KunalKushwaha)
     - [Find the "Kth" max and min element of an array](https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1)
