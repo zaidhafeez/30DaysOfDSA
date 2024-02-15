@@ -16,13 +16,13 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-//        var arr = [2, 3, 4, 9]
+        var arr = [2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
-        var arr = [2, -32, 0, 78, 1]
+//        var arr = [2, -32, 0, 78, 1]
 
         print("Original Array \(arr)")
-        selectionSort(arr: &arr)
+        insertionSort(arr: &arr)
         print("After Sorting Array \(arr)")
 //        let value = getMaxMin(arr: &arr)
 //        print("The max value \(value.0) and min value is \(value.1)")
@@ -164,6 +164,20 @@ class ViewController: UIViewController {
         }
         return max
     }
-
+    
+    //MARK: - Insertion Sort
+    func insertionSort(arr: inout [Int]) {
+        for i in 0...arr.count-2 {
+            var j = i + 1
+            while(j > 0) {
+                if arr[j - 1] > arr[j] {
+                    swap(arr: &arr, first: j - 1, second: j)
+                    j -= 1
+                } else {
+                    break
+                }
+            }
+        }
+    }
 }
 
