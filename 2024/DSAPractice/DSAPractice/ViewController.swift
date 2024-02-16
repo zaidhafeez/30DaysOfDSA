@@ -16,14 +16,15 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [2, 3, 4, 9]
+        var arr = [7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
 
         print("Original Array \(arr)")
-        insertionSort(arr: &arr)
+//        insertionSort(arr: &arr)
         print("After Sorting Array \(arr)")
+        print(kthSmallest(arr: &arr, k: 4))
 //        let value = getMaxMin(arr: &arr)
 //        print("The max value \(value.0) and min value is \(value.1)")
         
@@ -178,6 +179,22 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    //MARK: - Find Max and Min
+    /// https://www.enjoyalgorithms.com/blog/find-the-kth-smallest-element-in-an-array/
+    /// There are More ways to solve the problem and i have solved by using brute-force approach
+    /// Explore the link.
+    func kthSmallest (arr: inout [Int], k: Int) -> Int {
+        for i in 0...arr.count - 2 {
+            for j in stride(from: i+1, to: 0, by: -1) {
+                if arr[j] < arr[j - 1] {
+                    swap(arr: &arr, first: j, second: j-1)
+                } else {
+                    break
+                }
+            }
+        }
+        return arr[k-1]
     }
 }
 
