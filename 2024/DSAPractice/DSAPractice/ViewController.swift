@@ -16,15 +16,16 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
 
         print("Original Array \(arr)")
 //        insertionSort(arr: &arr)
+        sort012(arr: &arr)
         print("After Sorting Array \(arr)")
-        print(kthSmallest(arr: &arr, k: 4))
+//        print(kthSmallest(arr: &arr, k: 4))
 //        let value = getMaxMin(arr: &arr)
 //        print("The max value \(value.0) and min value is \(value.1)")
         
@@ -195,6 +196,40 @@ class ViewController: UIViewController {
             }
         }
         return arr[k-1]
+    }
+    
+    //MARK: - [Dutch National Flag Problem] Sort 0s, 1s and 2s from the array
+    /// https://www.enjoyalgorithms.com/blog/sort-an-array-of-0s-1s-and-2s/
+    /// It's called because there is three colors in the falg and placed it together if it's rearranged
+    func sort012(arr: inout [Int]) {
+        var count0s = 0, count1s = 0, count2s = 0
+        var j = 0
+        for i in arr.indices {
+            if arr[i] == 0 {
+                count0s += 1
+            }
+            if arr[i] == 1 {
+                count1s += 1
+            }
+            if arr[i] == 0 {
+                count2s += 1
+            }
+        }
+        while(count0s > 0 && j < arr.count) {
+            arr[j] = 0
+            j += 1
+            count0s -= 1
+        }
+        while(count1s > 0 && j < arr.count) {
+            arr[j] = 1
+            j += 1
+            count1s -= 1
+        }
+        while(count2s > 0 && j < arr.count) {
+            arr[j] = 2
+            j += 1
+            count2s -= 1
+        }
     }
 }
 
