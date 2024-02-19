@@ -16,14 +16,15 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
 
         print("Original Array \(arr)")
 //        insertionSort(arr: &arr)
-        sort012(arr: &arr)
+//        sort012(arr: &arr)
+        cyclicSort(arr: &arr)
         print("After Sorting Array \(arr)")
 //        print(kthSmallest(arr: &arr, k: 4))
 //        let value = getMaxMin(arr: &arr)
@@ -229,6 +230,19 @@ class ViewController: UIViewController {
             arr[j] = 2
             j += 1
             count2s -= 1
+        }
+    }
+    
+   //MARK: - Cyclic Sort
+    func cyclicSort(arr: inout [Int]) {
+        var i = 0
+        while i < arr.count {
+            var correctIndex = arr[i] - 1
+            if arr[i] != arr[correctIndex] {
+                swap(arr: &arr, first: i, second: correctIndex)
+            } else {
+                i += 1
+            }
         }
     }
 }
