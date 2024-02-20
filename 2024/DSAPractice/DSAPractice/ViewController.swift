@@ -16,11 +16,11 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
-        print(missingNumber(arr: &arr))
+        print(findDisappearedNumbers(arr: &arr))
 //        print("Original Array \(arr)")
 //        insertionSort(arr: &arr)
 //        sort012(arr: &arr)
@@ -245,7 +245,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    //MARK: - Find Missing Number)
+    //MARK: - Find Missing Number
     func missingNumber(arr: inout [Int]) -> Int {
         var i = 0
         while i < arr.count {
@@ -266,6 +266,27 @@ class ViewController: UIViewController {
         }
         // case 2:- // if every element is at correct Position
         return arr.count
+    }
+    
+    //MARK: - Find All Numbers Disappeared in an Array
+    func findDisappearedNumbers(arr: inout [Int]) -> [Int] {
+        var i = 0
+        var result = [Int]()
+        while i < arr.count {
+            let correctIndex = arr[i] - 1
+            if arr[i] != arr[correctIndex] {
+                swap(arr: &arr, first: i, second: correctIndex)
+            } else {
+                i += 1
+            }
+        }
+        
+        for i in arr.indices {
+            if arr[i] != i + 1 {
+                result.append(i+1)
+            }
+        }
+        return result
     }
 }
 
