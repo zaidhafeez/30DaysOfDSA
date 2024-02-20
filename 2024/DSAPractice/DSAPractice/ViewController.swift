@@ -16,11 +16,11 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
-        print(findDisappearedNumbers(arr: &arr))
+        print(segregateElements(arr: &arr))
 //        print("Original Array \(arr)")
 //        insertionSort(arr: &arr)
 //        sort012(arr: &arr)
@@ -287,6 +287,29 @@ class ViewController: UIViewController {
             }
         }
         return result
+    }
+    
+    //MARK: - Move all negative elements to end
+    /// this can be done in one single loop too but on that case order is not preserved.
+    /// link for single loop
+    ///https://github.com/zaidhafeez/30DaysOfDSA/blob/main/2024/450DSA/Array/Negative%20Numbers/NegativeNumbers.playground/Contents.swift
+    func segregateElements(arr: inout [Int]) -> [Int] {
+        var results = [Int]()
+        var i = 0
+        while i < arr.count {
+            if arr[i] > 0 {
+                results.append(arr[i])
+            }
+            i += 1
+        }
+        i = 0
+        while i < arr.count {
+            if arr[i] < 0 {
+                results.append(arr[i])
+            }
+            i += 1
+        }
+        return results
     }
 }
 
