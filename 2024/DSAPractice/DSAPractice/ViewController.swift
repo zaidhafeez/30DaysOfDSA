@@ -16,11 +16,11 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
-        print(findErrorNums(arr: &arr))
+        print(firstMissingPositive(arr: &arr))
 //        print("Original Array \(arr)")
 //        insertionSort(arr: &arr)
 //        sort012(arr: &arr)
@@ -389,6 +389,29 @@ class ViewController: UIViewController {
             }
         }
         return errorNums
+    }
+    
+    // MARK: - First Missing Positive
+    func firstMissingPositive(arr: inout [Int]) -> Int {
+        // key points:-
+        // Ignores are negative becauste ask positive
+        // Ignores the number which is greater than size of Array for example [7, 8, 9, 10, 11]
+        ///Idea : start searching that 1 is exist in arry similarly for 2, code is same as missing number
+        var i = 0;
+        while i < arr.count {
+            let correctIndex = arr[i] - 1
+            if arr[i] > 0 && arr[i] <= arr.count && arr[i] != arr[correctIndex] {
+                swap(arr: &arr, first: i, second: correctIndex)
+            } else {
+                i += 1
+            }
+        }
+        for i in arr.indices {
+            if arr[i] != i + 1 {
+                return i + 1
+            }
+        }
+        return arr.count + 1
     }
 }
 
