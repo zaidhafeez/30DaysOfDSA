@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
@@ -313,7 +313,7 @@ class ViewController: UIViewController {
     }
     
 //MARK: - Find the Duplicate Number
-    func findDuplicates(arr: inout [Int]) -> Int {
+    func findDuplicate(arr: inout [Int]) -> Int {
         var i = 0
         var duplicateNumber = 0
         while (i < arr.count) {
@@ -346,6 +346,27 @@ class ViewController: UIViewController {
 //            }
 //        }
         return duplicateNumber
+    }
+    
+    //MARK: - Find All Duplicates in an Array
+    ///
+    func findDuplicates(arr: inout [Int]) -> [Int] {
+        var i = 0
+        var duplicateNumbers = [Int]()
+        while (i < arr.count) {
+            let correctIndex = arr[i] - 1
+            if arr[i] != arr[correctIndex] {
+                swap(arr: &arr, first: i, second: correctIndex)
+            } else {
+                i += 1
+            }
+        }
+        for i in arr.indices {
+            if arr[i] != i + 1 {
+                duplicateNumbers.append(arr[i])
+            }
+        }
+        return duplicateNumbers
     }
 }
 
