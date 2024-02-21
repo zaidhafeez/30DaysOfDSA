@@ -349,7 +349,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Find All Duplicates in an Array
-    ///
+    ///https://leetcode.com/problems/find-all-duplicates-in-an-array/solutions/775775/duplicates-in-an-array/
     func findDuplicates(arr: inout [Int]) -> [Int] {
         var i = 0
         var duplicateNumbers = [Int]()
