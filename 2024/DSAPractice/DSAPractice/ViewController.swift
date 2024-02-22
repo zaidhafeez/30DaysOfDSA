@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 //        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
 //        var arr2 = [85, 2]
 //        print(doUnion(arr1: arr1, arr2: arr2))
+        print(search(str: "Zaid", target: "z"))
         print("Original Array \(arr)")
         rotateArray(arr: &arr)
 //        insertionSort(arr: &arr)
@@ -441,6 +442,16 @@ class ViewController: UIViewController {
         for index in arr.indices {
             swap(arr: &arr, first: index, second: lastIndex)
         }
+    }
+    
+    // MARK: - Search Character in the String
+    func search(str: String, target: Character) -> Bool {
+        for char in str {
+            if char.lowercased() == target.lowercased() {
+                return true
+            }
+        }
+        return false
     }
 }
 
