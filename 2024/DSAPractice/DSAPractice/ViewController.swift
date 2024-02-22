@@ -20,14 +20,15 @@ class ViewController: UIViewController {
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
-        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
-        var arr2 = [85, 2]
-        print(doUnion(arr1: arr1, arr2: arr2))
-//        print("Original Array \(arr)")
+//        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
+//        var arr2 = [85, 2]
+//        print(doUnion(arr1: arr1, arr2: arr2))
+        print("Original Array \(arr)")
+        rotateArray(arr: &arr)
 //        insertionSort(arr: &arr)
 //        sort012(arr: &arr)
 //        cyclicSort(arr: &arr)
-//        print("After Sorting Array \(arr)")
+        print("After Sorting Array \(arr)")
 //        print(kthSmallest(arr: &arr, k: 4))
 //        let value = getMaxMin(arr: &arr)
 //        print("The max value \(value.0) and min value is \(value.1)")
@@ -430,6 +431,16 @@ class ViewController: UIViewController {
             set.insert(item)
         }
         return set.count
+    }
+    
+    // MARK: - Rotate Array
+    func rotateArray(arr: inout [Int]) {
+        // rotate the array by one position in clock-wise direction.
+        ///https://medium.com/swift-coding/rotate-arrays-in-swift-7f223007ad6f
+        let lastIndex = arr.count - 1
+        for index in arr.indices {
+            swap(arr: &arr, first: index, second: lastIndex)
+        }
     }
 }
 
