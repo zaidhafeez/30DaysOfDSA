@@ -20,7 +20,9 @@ class ViewController: UIViewController {
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
-        print(firstMissingPositive(arr: &arr))
+        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
+        var arr2 = [85, 2]
+        print(doUnion(arr1: arr1, arr2: arr2))
 //        print("Original Array \(arr)")
 //        insertionSort(arr: &arr)
 //        sort012(arr: &arr)
@@ -412,6 +414,22 @@ class ViewController: UIViewController {
             }
         }
         return arr.count + 1
+    }
+    
+    // MARK: - Union of Two Arrays
+    func doUnion(arr1: [Int], arr2: [Int]) -> Int {
+        //Set properties
+        ///https://www.geeksforgeeks.org/find-union-and-intersection-of-two-unsorted-arrays/
+        ///The most common approach (looping and adding individual elements) has a time complexity of O(m).
+        ///Creating a new set from the combined elements might have a complexity of O(n + m) or O(m) depending on the implementation.
+        var set = Set<Int>()
+        for item in arr1 {
+            set.insert(item)
+        }
+        for item in arr2 {
+            set.insert(item)
+        }
+        return set.count
     }
 }
 
