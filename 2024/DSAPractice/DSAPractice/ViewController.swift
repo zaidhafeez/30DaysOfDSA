@@ -16,20 +16,21 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
+        var arr = [5,4,-1,7,8]// [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
 //        var arr = [2, -32, 0, 78, 1]
 //        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
 //        var arr2 = [85, 2]
+        print(findLargestSum(arr: arr))
 //        print(doUnion(arr1: arr1, arr2: arr2))
-        print(search(str: "Zaid", target: "z"))
-        print("Original Array \(arr)")
-        rotateArray(arr: &arr)
+//        print(search(str: "Zaid", target: "z"))
+//        print("Original Array \(arr)")
+//        rotateArray(arr: &arr)
 //        insertionSort(arr: &arr)
 //        sort012(arr: &arr)
 //        cyclicSort(arr: &arr)
-        print("After Sorting Array \(arr)")
+//        print("After Sorting Array \(arr)")
 //        print(kthSmallest(arr: &arr, k: 4))
 //        let value = getMaxMin(arr: &arr)
 //        print("The max value \(value.0) and min value is \(value.1)")
@@ -452,6 +453,29 @@ class ViewController: UIViewController {
             }
         }
         return false
+    }
+    
+    // MARK: - Kadane's Algorithm
+    ///https://www.youtube.com/watch?v=w4W6yya1PIc&ab_channel=CodeHelp-byBabbar
+    ///https://enjoyalgorithms.com/blog/maximum-subarray-sum/
+    ///subArray = "contiguas array
+    ///
+    ///attached notes of 23rdFeb23k
+    ///Steps:
+    ///1. Initialize sum = 0 and maximum = firstElement of Array if there is atleast one element and it's positive
+    ///2. update maximum max(maximum, sum
+    ///3. if sum < 0; sum = 0
+    func findLargestSum(arr: [Int]) -> Int {
+        var sum = 0
+        var maximum = arr[0]
+        for index in arr.indices {
+            sum += arr[index]
+            maximum = max(sum, maximum)
+            if sum < 0 {
+                sum = 0
+            }
+        }
+        return maximum
     }
 }
 
