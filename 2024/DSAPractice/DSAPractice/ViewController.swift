@@ -22,7 +22,8 @@ class ViewController: UIViewController {
 //        var arr = [2, -32, 0, 78, 1]
 //        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
 //        var arr2 = [85, 2]
-        print(findLargestSum(arr: arr))
+        var start = 1
+        print(searchInTheRange(arr: arr, start: &start, end: 2, target: 4))
 //        print(doUnion(arr1: arr1, arr2: arr2))
 //        print(search(str: "Zaid", target: "z"))
 //        print("Original Array \(arr)")
@@ -477,5 +478,20 @@ class ViewController: UIViewController {
         }
         return maximum
     }
+    
+    // MARK: - Search Character in the Range
+    func searchInTheRange(arr: [Int], start: inout Int, end: Int, target: Int) -> Bool {
+        if arr.isEmpty {
+            return false
+        }
+        while start <= end {
+            if arr[start] == target {
+                return true
+            }
+            start += 1
+        }
+        return false
+    }
+
 }
 
