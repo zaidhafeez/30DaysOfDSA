@@ -549,13 +549,25 @@ class ViewController: UIViewController {
     
     // check whether numbes has evendigits or not
     func even(_ number: Int) -> Bool {
+        let numberOfDigits = digits(number: number)
+        return numberOfDigits.isMultiple(of: 2)
+    }
+    
+    // Find Digits from a number
+    func digits(number: Int) -> Int {
         var num = number
         var count = 0
+        if num == 0 {
+            return 1
+        }
+        if num < 0 {
+            num *= -1
+        }
         while num > 0 {
             count += 1
-            num = num / 10
+            num /= 10
         }
-        return count.isMultiple(of: 2)
+        return count
     }
 }
 
