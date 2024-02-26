@@ -5,6 +5,7 @@
 //  Created by Mohammad Zaid on 24/01/24.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -549,7 +550,7 @@ class ViewController: UIViewController {
     
     // check whether numbes has evendigits or not
     func even(_ number: Int) -> Bool {
-        let numberOfDigits = digits(number: number)
+        let numberOfDigits = digits2(number: number)
         return numberOfDigits.isMultiple(of: 2)
     }
     
@@ -568,6 +569,19 @@ class ViewController: UIViewController {
             num /= 10
         }
         return count
+    }
+    
+    // Find Digits from a number
+    // Optimized Way
+    func digits2(number: Int) -> Int {
+        var num = number
+        if num == 0 {
+            return 1
+        }
+        if num < 0 {
+            num *= -1
+        }
+        return Int(log10(CGFloat(number))) + 1
     }
 }
 
