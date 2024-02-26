@@ -534,6 +534,28 @@ class ViewController: UIViewController {
         }
         return max
     }
-
+    
+    // MARK: - [Linear Search] Find Numbers with Even Number of Digits
+    ///https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/
+    func findNumbers(arr: [Int]) -> Int {
+        var count = 0
+        for number in arr {
+            if even(number) {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    // check whether numbes has evendigits or not
+    func even(_ number: Int) -> Bool {
+        var num = number
+        var count = 0
+        while num > 0 {
+            count += 1
+            num = num / 10
+        }
+        return count.isMultiple(of: 2)
+    }
 }
 
