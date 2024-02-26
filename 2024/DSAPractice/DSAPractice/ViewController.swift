@@ -16,8 +16,8 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [5,4,-7,7,8]
-        print(min(arr: arr))
+        var arr = [[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
+        print(searchIn2D(arr: arr, target: -1))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
@@ -506,6 +506,19 @@ class ViewController: UIViewController {
         }
         return min
     }
-
+    
+    // MARK: - Search In 2-D Arrays
+    // Linear Search
+    func searchIn2D(arr: [[Int]], target: Int) -> [Int] {
+        var ans = [Int]()
+        for (row, columns) in arr.enumerated() {
+            for col in columns.indices {
+                if arr[row][col] == target {
+                    ans = [row, col]
+                }
+            }
+        }
+        return ans
+    }
 }
 
