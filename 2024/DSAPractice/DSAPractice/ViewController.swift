@@ -17,8 +17,8 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
-        print(findNumbers(arr: arr))
+        var arr = [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
+        print(maximumWealthOptimized(arr))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
@@ -582,6 +582,46 @@ class ViewController: UIViewController {
             num *= -1
         }
         return Int(log10(CGFloat(number))) + 1
+    }
+    
+    // MARK: - [Linear Search] Find Max In 2-D Arrays
+    ///https://www.youtube.com/watch?v=_HRA37X8N_Q
+    ///Richest Customer Wealth https://leetcode.com/problems/richest-customer-wealth/description/
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        var sums = [Int]()
+        var sum = 0
+        for columns in accounts {
+            for account in columns {
+                sum += account
+            }
+            sums.append(sum)
+            sum = 0
+        }
+        return getMax(arr: sums)
+    }
+    
+    func maximumWealthOptimized(_ accounts: [[Int]]) -> Int {
+        var max = Int.min
+        for columns in accounts {
+            var sum = 0
+            for account in columns {
+                sum += account
+            }
+            if sum > max {
+                max = sum
+            }
+        }
+        return max
+    }
+    
+    func getMax(arr: [Int]) -> Int {
+        var max = Int.min
+        for item in arr {
+            if item > max {
+                max = item
+            }
+        }
+        return max
     }
 }
 
