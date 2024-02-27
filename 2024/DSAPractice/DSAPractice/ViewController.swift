@@ -17,8 +17,9 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
-        print(maximumWealthOptimized(arr))
+        var arr = [-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
+        let target = 22
+        print(binarySearch(arr: arr, target: target))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
@@ -614,6 +615,7 @@ class ViewController: UIViewController {
         return max
     }
     
+    //MARK: - Get Maximum Element from the array
     func getMax(arr: [Int]) -> Int {
         var max = Int.min
         for item in arr {
@@ -622,6 +624,29 @@ class ViewController: UIViewController {
             }
         }
         return max
+    }
+    
+    //MARK: - Binary Search
+    /// for binary serach we always use sorted array
+    ///time complexity O(logbase2N)
+    ///we find the element and return the index
+    ///if start > end then we can easily say that element is not found.
+    ///[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]
+    func binarySearch(arr: [Int], target: Int) -> Int {
+        var start = 0
+        var end = arr.count - 1
+        while start <= end {
+            //var mid = (start + end) / 2 // we do not use this method because Integer max value get exceed so
+            let mid = start + (end - start) / 2
+            if target < arr[mid] {
+                end  = mid - 1
+            } else if target > arr[mid] {
+                start = mid + 1
+            } else {
+                return mid
+            }
+        }
+        return -1
     }
 }
 
