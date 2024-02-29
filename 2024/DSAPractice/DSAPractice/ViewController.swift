@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         var arr = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
 //        arr.sort(by: >) // descending order
 //        let target = 22
-        print(findMinJumps(arr: arr))
+        print(optimizedFindMinJumps(arr: arr))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
@@ -722,6 +722,27 @@ class ViewController: UIViewController {
             currStart += 1
         }
         return jump
+    }
+    
+    // MARK: - Optimized Minm Jumps
+    ///https://www.youtube.com/watch?v=9kyHYVxL4fw
+    ///[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
+    func optimizedFindMinJumps(arr: [Int]) -> Int {
+        var coverage = 0 //farthest
+        var destn = arr.count - 1
+        var totalJumps = 0
+        var lastIndex = 0
+        for i in arr.indices {
+            coverage = max(coverage, i + arr[i]) //farthest i can go
+            if i == lastIndex { // It will tell you that you reach the last index in window
+                lastIndex = coverage
+                totalJumps += 1
+                if coverage >= destn {
+                    return totalJumps
+                }
+            }
+        }
+        return totalJumps
     }
 }
 
