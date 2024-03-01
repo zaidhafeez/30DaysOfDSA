@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 //        }
         var arr = [2, 3, 5, 9, 14, 16, 18]//[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
 //        arr.sort(by: >) // descending order
-        let target = 15
+        let target = -1
         print(findFlooringOfNum(arr: arr, target: target))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
@@ -748,9 +748,14 @@ class ViewController: UIViewController {
     // MARK: - Find a ceiling of a number
     //ceiling = smallest number which is greater than or equal to the target
     //[2, 3, 5, 9, 14, 16, 18
+    //return index smallest number  >= target
     func findCeilingOfNum(arr: [Int], target: Int) -> Int {
         var start = 0
         var end = arr.count - 1
+        // what if target is the greater than the greatest number in arrat
+        if target > arr[end] {
+            return -1
+        }
         while start <= end {
             var mid = start + (end - start) / 2
             if target > arr[mid] {
@@ -761,12 +766,13 @@ class ViewController: UIViewController {
                 return mid
             }
         }
-        return arr[start] // we choose start because when while condition break then start = end + 1 
+        return start // we choose start because when while condition break then start = end + 1
     }
     
     // MARK: - Find a flooring of a number
     //Flooring = greatest number which is smaller than or equal to the target
     //[2, 3, 5, 9, 14, 16, 18
+    //return index greatest number  <= target
     func findFlooringOfNum(arr: [Int], target: Int) -> Int {
         var start = 0
         var end = arr.count - 1
@@ -780,7 +786,7 @@ class ViewController: UIViewController {
                 return mid
             }
         }
-        return arr[end] // we choose start because when while condition break then start = end + 1
+        return end // we choose start because when while condition break then start = end + 1
     }
 }
 
