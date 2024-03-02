@@ -17,10 +17,10 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [2, 3, 5, 9, 14, 16, 18]//[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
+        var arr: [Character] = ["c", "f", "j"]//[2, 3, 5, 9, 14, 16, 18]//[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
 //        arr.sort(by: >) // descending order
-        let target = -1
-        print(findFlooringOfNum(arr: arr, target: target))
+        let target: Character = "a"
+        print(nextGreatestLetter(arr, target))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
@@ -787,6 +787,25 @@ class ViewController: UIViewController {
             }
         }
         return end // we choose start because when while condition break then start = end + 1
+    }
+    
+    // MARK: - Find Smallest Number Greater than target
+    ///https://leetcode.com/problems/find-smallest-letter-greater-than-target/
+    ///key points 1. Approach is same as ceiling of number
+    ///2. Ignore the targer is equal the element.
+    ///2. in leetcode there is a wrap around:-  that means when you don't have a target in a character array then it will return it's first indext or that means start % letters.count
+    func nextGreatestLetter(_ letters: [Character], _ target: Character) -> Character {
+        var start = 0
+        var end = letters.count - 1
+        while start <= end {
+            let mid = start + (end - start) / 2
+            if target < letters[mid] {
+                end = mid - 1
+            } else {
+                start = mid + 1
+            }
+        }
+        return letters[start % letters.count]
     }
 }
 
