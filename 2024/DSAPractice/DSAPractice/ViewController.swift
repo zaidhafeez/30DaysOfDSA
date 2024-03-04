@@ -17,10 +17,10 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [5,7,7,8,8,10]//[2, 3, 5, 9, 14, 16, 18]//[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
+        var arr = [3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170]//[5,7,7,8,8,10]//[2, 3, 5, 9, 14, 16, 18]//[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
 //        arr.sort(by: >) // descending order
-        let target = 8
-        print(searchRange(arr, target))
+        let target = 10
+        print(ans(arr: arr, target: target))
         // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
 //        var arr = [1, 2, 3, 4]
 //        var arr = [4, 5, 1, 2, 3]
@@ -844,6 +844,40 @@ class ViewController: UIViewController {
             }
         }
         return ans
+    }
+    
+    // MARK: - Find Position of an element in an infinite sorted array
+    ///https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/
+    func ans(arr: [Int], target: Int) -> Int {
+//        first find the range
+        // first start with the size of box 2
+        var start = 0
+        var end = 1
+        // condtion for the target to lie in the range
+        while(target > arr[end]) {
+            var newStart = end + 1 //  this is new start and we create this property just because we have to use old start in next line
+            // double the box value
+            // end  = previous end + 2*sizeOfBox
+            end = end + ((end - start) + 1) * 2 // this can be use when we have a start and end and based on that indices i have to find the size if array of box
+            start = newStart
+        }
+        return binarySearch(arr: arr, target: target)
+    }
+    
+    func binarySearch(arr: [Int], target: Int, start: Int, end: Int) -> Int {
+        var start = start
+        var end = end
+        while start <= end {
+            let mid = start + (end - start) / 2
+            if target > arr[mid] {
+                start = mid + 1
+            } else if target < arr[mid] {
+                end = mid - 1
+            } else {
+                return mid
+            }
+        }
+        return -1
     }
 }
 
