@@ -17,10 +17,10 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [0, 10, 5, 2]
+        var arr = [0, 10, 11, 5, 2]
 //        arr.sort(by: >) // descending order
-//        let target = 10
-        print(peakIndexInMountainArray(arr))
+        let target = 2
+        print(search(arr, target: target))
     }
     
 
@@ -853,6 +853,7 @@ class ViewController: UIViewController {
     
     // MARK: - Peak Index in a Mountain Array
     ///https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
+    ///https://leetcode.com/problems/find-peak-element/description/
     /// Bitonic array:-  means that first stricly in increasing order and second one is in decreasing order i.e.,  [1, 2, 3, 5, 6, 4, 3, 2]
     func peakIndexInMountainArray(_ arr: [Int]) -> Int {
         var start = 0
@@ -877,5 +878,44 @@ class ViewController: UIViewController {
         /// and if we are saying that only one element is remaining, hence cuz of above line  it means it has a best possible answer.
         return start // or end because they pointing the same
     }
+    
+    // MARK: - Find in a Mountain Array
+    /// https://leetcode.com/problems/find-in-mountain-array/description/
+    func search(_ arr: [Int], target: Int) -> Int {
+        var peak = peakIndexInMountainArray(arr)
+        var firstTry = orderAgnosticBS(arr: arr, target: target, start: 0, end: peak)
+        if firstTry != -1 {
+            return firstTry
+        }
+        return orderAgnosticBS(arr: arr, target: target, start: peak + 1, end: arr.count - 1)
+    }
+    
+    func orderAgnosticBS(arr: [Int], target: Int, start: Int, end: Int) -> Int {
+        var start = start
+        var end = end
+        var isAsc = arr[start] < arr[end]
+        
+        while start <= end {
+            let mid = start + (end - start) / 2
+            if target == arr[mid] {
+                return mid
+            }
+            if isAsc {
+                if target < arr[mid] {
+                    end  = mid - 1
+                } else {
+                    start = mid + 1
+                }
+            } else {
+                if target > arr[mid] {
+                    end = mid - 1
+                } else {
+                    start = mid + 1
+                }
+            }
+        }
+        return -1
+    }
+    
 }
 
