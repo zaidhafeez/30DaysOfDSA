@@ -17,39 +17,10 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170]//[5,7,7,8,8,10]//[2, 3, 5, 9, 14, 16, 18]//[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9] //[1, 4, 3, 2, 6, 7]//[-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89]//[3, 9, 12, 16, 20]//[1, 5, 8, 10]// [[2,8,7],[7,1,3],[1,9,5]]//[[1,5],[7,3],[3,5]]//[[1,2,3],[3,2,1]]//[12,345,2,6,7896]//[[23, 4, 1], [18, 12, 3, 9], [78, 99, 34, 56], [18, 12]]//[5,4,-7,7,8]
+        var arr = [0, 10, 5, 2]
 //        arr.sort(by: >) // descending order
-        let target = 10
-        print(ans(arr: arr, target: target))
-        // [-2,1,-3,4,-1,2,1,-5,4]//[3,4,-1,1]//[7,8,9,11,12]//[8,7,3,5,3,6,1,4]//[1,2,2,4]//[4,3,2,7,8,2,3,1]//[3,1,3,4,2] //[1,3,4,2,2]//[-5, 7, -3, -4, 9, 10, -1, 11]//[1, -1, 3, 2, -7, -5, 11, 6]//[1,1] //[4,3,2,7,8,2,3,1]//[4,0,2,1]//[9,6,4,2,3,5,7,0,1]//[0,1]//[3,0,1]//[3, 5, 2, 1, 4]//[0, 1, 0]//[0, 2, 1, 2, 0] //[7, 10, 4, 20, 15] //[7, 10, 4, 3, 20, 15]//[2, 3, 4, 9]
-//        var arr = [1, 2, 3, 4]
-//        var arr = [4, 5, 1, 2, 3]
-//        var arr = [2, -32, 0, 78, 1]
-//        var arr1 = [85, 25, 1, 32, 54, 6] //[1, 2, 3, 4, 5]
-//        var arr2 = [85, 2]
-//        var start = 1
-//        print(searchInTheRange(arr: arr, start: &start, end: 2, target: 4))
-//        print(doUnion(arr1: arr1, arr2: arr2))
-//        print(search(str: "Zaid", target: "z"))
-//        print("Original Array \(arr)")
-//        rotateArray(arr: &arr)
-//        insertionSort(arr: &arr)
-//        sort012(arr: &arr)
-//        cyclicSort(arr: &arr)
-//        print("After Sorting Array \(arr)")
-//        print(kthSmallest(arr: &arr, k: 4))
-//        let value = getMaxMin(arr: &arr)
-//        print("The max value \(value.0) and min value is \(value.1)")
-        
-//        reverseArray(start: 0, end: arr.count - 1, arr: &arr)
-//        print("After Reverse Array \(arr)")
-//        reverseArray(arr: arr)
-//        getMinMax(arr: &arr)
-//        print("before sorting \(arr)")
-//        var startTime = CACurrentMediaTime()
-//        bubbleSort(arr: &arr)
-//        print("Execution Done In Time: - \(CACurrentMediaTime() - startTime)")
-//        print("after sorting \(arr)")
+//        let target = 10
+        print(peakIndexInMountainArray(arr))
     }
     
 
@@ -878,6 +849,33 @@ class ViewController: UIViewController {
             }
         }
         return -1
+    }
+    
+    // MARK: - Peak Index in a Mountain Array
+    ///https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
+    /// Bitonic array:-  means that first stricly in increasing order and second one is in decreasing order i.e.,  [1, 2, 3, 5, 6, 4, 3, 2]
+    func peakIndexInMountainArray(_ arr: [Int]) -> Int {
+        var start = 0
+        var end = arr.count - 1
+        while start < end {
+            let mid = start + (end - start) / 2
+            ///checking which portion of i am
+            if arr[mid] > arr[mid + 1] {
+                // i am in decreasing array of portion then my end will be mid
+                // it might be a posssible ans, but look at left
+                // this is why end != mid
+                end = mid
+            } else {
+                // I am in inc. part of the array then my start will be mid + 1
+                start = mid + 1 //  because we know that mid + 1 element > element at mid
+            }
+        }
+        /// In the end, start == end and pointing to the largest number because of above two checks
+        /// start and end always trying to  finding max lement from above two checks
+        /// hence when  they are pointing to just one element, that is max one because that is abpve check say.
+        /// more elaboration: at every point  start and end, they have the best possible ans till that time.
+        /// and if we are saying that only one element is remaining, hence cuz of above line  it means it has a best possible answer.
+        return start // or end because they pointing the same
     }
 }
 
