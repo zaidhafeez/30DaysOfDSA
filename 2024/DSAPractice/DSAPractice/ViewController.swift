@@ -17,10 +17,10 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [0, 10, 11, 5, 2]
+        var arr = [1,3]
 //        arr.sort(by: >) // descending order
-        let target = 2
-        print(search(arr, target: target))
+        let target = 0
+        print(searchInRotatedSortedArray(arr, target))
     }
     
 
@@ -917,5 +917,76 @@ class ViewController: UIViewController {
         return -1
     }
     
+    // MARK: - Search in Rotated Sorted Array
+    //https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+    /// To solve this problem we have some key points
+    /// 1. First Find Pivot and Pivots is basically from where next numbers is in asc.. and it is peak in the array.
+    /// 2. then binary search
+    /// 2. [3, 4,5, 6,7,0,1,2] Find Pivot
+    /// 2. a if  find that mid > mid + 1 then my pivot is mid
+    /// 2.b  if  find that mid < mid-1 then my pivot is mid - 1
+    ///  2. c if element at mid <= start element then my end  = mid - 1
+    ///     else start element < mid element then start = mid + 1
+    func searchInRotatedSortedArray(_ nums: [Int], _ target: Int) -> Int {
+        let pivot = findPivot(nums)
+        
+        /// If you didn't find a pivot, it means the array is not sorted, just do a normal binary search.
+        if pivot == -1 {
+            
+            //.just do a normal binary search
+            return binarySearch(nums, target, 0, nums.count - 1)
+        }
+        
+        // if found pivot then we found 2 asc sorted arrays
+        if nums[pivot] == target {
+            return pivot
+        }
+        
+        //if target >= start then we have to reduce our search space
+        if target >= nums[0] {
+            return binarySearch(nums, target, 0, pivot - 1)
+        }
+        
+        //if target < start then we have to reduce our search space
+        return binarySearch(nums, target, pivot + 1, nums.count - 1)
+        
+    }
+
+    func findPivot(_ arr: [Int]) -> Int {
+        var start = 0
+        var end = arr.count - 1
+        while (start <= end) {
+            let mid = start + (end - start) / 2
+            if mid < end && arr[mid] > arr[mid + 1] {
+                return mid
+            }
+            if mid > start && arr[mid] < arr[mid - 1] {
+                return mid
+            }
+            if arr[mid] <= arr[start] {
+                end  = mid - 1
+            } else {
+                start = mid + 1
+            }
+        }
+        return -1
+    }
+
+    func binarySearch(_ arr: [Int], _ target: Int, _ start: Int, _ end: Int) -> Int {
+        var start = start
+        var end = end
+        while start <= end {
+            //var mid = (start + end) / 2 // we do not use this method because Integer max value get exceed so
+            let mid = start + (end - start) / 2
+            if target < arr[mid] {
+                end  = mid - 1
+            } else if target > arr[mid] {
+                start = mid + 1
+            } else {
+                return mid
+            }
+        }
+        return -1
+    }
 }
 
