@@ -988,5 +988,44 @@ class ViewController: UIViewController {
         }
         return -1
     }
+    
+    
+    // MARK: - Search in Rotated Sorted Array With Duplicate Values
+    func findPivotWithDuplicateValues(_ arr: [Int]) -> Int {
+        var start = 0
+        var end = arr.count - 1
+        while (start <= end) {
+            let mid = start + (end - start) / 2
+            if mid < end && arr[mid] > arr[mid + 1] {
+                return mid
+            }
+            if mid > start && arr[mid] < arr[mid - 1] {
+                return mid
+            }
+            // if my start, mid and end position elements are equal just skip the duplicates
+            if (arr[mid] == arr[start] || arr[mid] == arr[end]) {
+                // NOTE: what if these elements at start and end are pivot?
+                // check if start is pivot
+                if arr[start] > arr[start + 1] {
+                    return start
+                }
+                start += 1
+                
+                // check whether end is pivot or not
+                if arr[end] < arr[end - 1] {
+                    return end - 1
+                }
+                end -= 1
+            }
+            // left side is sorted then my pivot should be on right
+            else if (arr[start] <  arr[mid] || (arr[mid] == arr[start] && arr[mid] > arr[end])) {
+                start = mid + 1
+            } else {
+                end = mid - 1
+            }
+            
+        }
+        return -1
+    }
 }
 
