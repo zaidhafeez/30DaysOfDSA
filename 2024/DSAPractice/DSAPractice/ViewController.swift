@@ -961,7 +961,7 @@ class ViewController: UIViewController {
                 return mid
             }
             if mid > start && arr[mid] < arr[mid - 1] {
-                return mid
+                return mid - 1
             }
             if arr[mid] <= arr[start] {
                 end  = mid - 1
