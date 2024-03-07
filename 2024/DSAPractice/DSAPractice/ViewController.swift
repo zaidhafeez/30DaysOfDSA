@@ -17,10 +17,10 @@ class ViewController: UIViewController {
 //        var arr = (1...10000).map { _ in
 //            return Int.random(in: 1...10000)
 //        }
-        var arr = [1,3]
+        var arr = [0,1,2,4,5,6,7]
 //        arr.sort(by: >) // descending order
-        let target = 0
-        print(searchInRotatedSortedArray(arr, target))
+//        let target = 0
+        print(countRotations(arr))
     }
     
 
@@ -1024,6 +1024,33 @@ class ViewController: UIViewController {
                 end = mid - 1
             }
             
+        }
+        return -1
+    }
+    
+    // MARK: - Find Minimum in Rotated Sorted Array
+
+    func countRotations(_ nums: [Int]) -> Int {
+        var  pivot = findPivotsForRotation(nums)
+        return pivot + 1
+    }
+    
+    func findPivotsForRotation(_ nums: [Int]) -> Int {
+        var start = 0
+        var end = nums.count - 1
+        while start <= end {
+            let mid = start + (end - start) / 2
+            if mid < end && nums[mid] > nums[mid + 1] {
+                return mid
+            }
+            if mid > start && nums[mid] < nums[mid - 1] {
+                return mid - 1
+            }
+            if nums[start] <= nums[mid] {
+                end  = end - 1
+            } else {
+                start = start + 1
+            }
         }
         return -1
     }
