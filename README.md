@@ -47,7 +47,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 13**
     - [Minimum number of jumps](https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1)
   - **Day 14**
-- Week 3: Arrays
+- Week 3: Sorting [13 - 21th Feb]
   - **Day 15**
   - **Day 16**
   - **Day 17**
@@ -55,5 +55,5 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 19**
   - **Day 20**
   - **Day 21**
-- Week 4: Arrays
-- Week 5: Arrays
+- Week 4: Searching [22th  - 29th Feb]
+- Week 5 & 6: BS Questions [1 - 9th Mar]
