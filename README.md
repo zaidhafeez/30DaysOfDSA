@@ -56,6 +56,13 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 20**
   - **Day 21**
 - Week 4: Searching [22th  - 29th Feb]
-  - Linear Search
-  - Binary Search
+  - **Day 22**
+    - Linear Search
+  - **Day 23**
+     - Binary Search
+  - **Day 24**
+  - **Day 25**
+  - **Day 26**
+  - **Day 27**
+  - **Day 28**
 - Week 5 & 6: BS Questions [1 - 9th Mar]
