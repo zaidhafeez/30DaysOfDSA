@@ -61,6 +61,7 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 23**
      - Binary Search
   - **Day 24**
+    - Binary Search Questions
   - **Day 25**
   - **Day 26**
   - **Day 27**
