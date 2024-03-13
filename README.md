@@ -66,4 +66,4 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 26**
   - **Day 27**
   - **Day 28**
-- Week 5 & 6: BS Questions [1 - 14th Mar]
+- Week 5 & 6: BS Questions [1st - 14th Mar]
