@@ -49,8 +49,11 @@ Please feel free to connect and share your insights on Twitter; you can find me 
   - **Day 14**
 - Week 3: Sorting [13 - 21th Feb]
   - **Day 15**
+    - Insertion Sort
   - **Day 16**
+    - Selection Sort
   - **Day 17**
+    - Bubble Sort
   - **Day 18**
   - **Day 19**
   - **Day 20**
